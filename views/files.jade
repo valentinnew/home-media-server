@@ -1,0 +1,20 @@
+extends layout
+
+mixin fileItem(file)
+    li
+        if file.isDirectory
+            b
+                a(href = '/files?dir=' + workDir + file.name)= file.name
+        else
+            a(href = '/get/' + workDir + file.name)= file.name
+
+block content
+    h1= title
+    p #{title}
+    ul
+        if parentDir === '' || parentDir === '/'
+            a(href = '/files')= '..'
+        else if parentDir !== false
+            a(href = '/files?dir=' + parentDir)= '..'
+        each file in files
+            +fileItem(file)

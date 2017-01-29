@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  home-media-server:
+    image: valentinnew/home-media-server
+    network_mode: "bridge"
+    volumes:
+      - ./:/var/www/
+      - /Volumes/Drive/Library/Video:/var/lib/library
+    ports:
+      - "3000:3000"
