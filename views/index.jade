@@ -13,8 +13,8 @@ block content
     p #{title}
     ul
         if parentDir === '' || parentDir === '/'
-            a(href = '/files')= '..'
+            a(href = '/')= '..'
         else if parentDir !== false
-            a(href = '/files?dir=' + parentDir)= '..'
+            a(href = '?dir=' + parentDir)= '..'
         each file in files
             +fileItem(file)
