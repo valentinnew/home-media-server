@@ -4,7 +4,7 @@ mixin fileItem(file)
     li
         if file.isDirectory
             b
-                a(href = '/files?dir=' + workDir + file.name)= file.name
+                a(href = '?dir=' + workDir + file.name)= file.name
         else
             a(href = '/get/' + workDir + file.name)= file.name
 
