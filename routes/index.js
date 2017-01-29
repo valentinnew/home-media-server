@@ -69,7 +69,7 @@ router.get('/', function(req, res, next) {
             ls.push(file);
         }
 
-        res.render('files', {
+        res.render('index', {
             title: 'File list',
             files: ls,
             workDir: workdir.getRelativePath(),
